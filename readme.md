@@ -2,8 +2,7 @@
 
 Laravel components for Bootstrap modals
 
-[![Name](https://badgen.net/packagist/name/regnilk/bs-modal-laravel?color=blue)](https://packagist.org/packages/regnilk/bs-modal-laravel)
-[![Latest stable release](https://badgen.net/packagist/v/regnilk/bs-modal-laravel?color=cyan)](https://packagist.org/packages/regnilk/bs-modal-laravel)
+[![License](https://badgen.net/packagist/license/regnilk/bs-modal-laravel)]()
 [![Name](https://badgen.net/github/last-commit/regnilk/bs-modal-laravel?color=green)](https://github.com/regnilk/bs-modal-laravel)
 
 [![Total Download](https://badgen.net/packagist/dt/regnilk/bs-modal-laravel?color=green)](https://github.com/regnilk/bs-modal-laravel)
@@ -15,8 +14,6 @@ Laravel components for Bootstrap modals
 [![laravel](https://badgen.net/badge/Laravel/&gt;&equals;8.0?color=orange)]()
 [![bootstrap](https://badgen.net/badge/Bootstrap/&gt;&equals;4.0?color=orange)]()
 [![fa-laravel](https://badgen.net/badge/regnilk-fa-laravel/&gt;&equals;1.1?color=orange)]()
-
-[![License](https://badgen.net/packagist/license/regnilk/bs-modal-laravel)]()
 
 
 > **Note** : This package is to be used with Laravel v8 and Bootstrap v4 
