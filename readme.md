@@ -14,7 +14,7 @@ Laravel components for Bootstrap modals
 [![php](https://badgen.net/packagist/php/regnilk/bs-modal-laravel?color=orange)]()
 [![laravel](https://badgen.net/badge/Laravel/&gt;&equals;8.0?color=orange)]()
 [![bootstrap](https://badgen.net/badge/Bootstrap/&gt;&equals;4.0?color=orange)]()
-[![fa-laravel](https://badgen.net/badge/regnilk-fa-laravel/&gt;&equals;1.0.13?color=orange)]()
+[![fa-laravel](https://badgen.net/badge/regnilk-fa-laravel/&gt;&equals;1.1?color=orange)]()
 
 [![License](https://badgen.net/packagist/license/regnilk/bs-modal-laravel)]()
 
