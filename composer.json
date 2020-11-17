@@ -1,0 +1,34 @@
+{
+    "name": "regnilk/bs-modal-laravel",
+    "description": "Laravel components for Bootstrap modals",
+    "type": "library",
+    "keywords": ["laravel", "bootstrap", "modal"],
+    "license": "MIT",
+    "homepage": "https://github.com/regnilk/bs-modal-laravel",
+    "authors": [
+        {
+            "name": "Regnilk",
+            "email": "jack@regnilk.fr"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "illuminate/config": "^8.0",
+        "illuminate/support": "^8.0",
+        "regnilk/fa-laravel": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Regnilk\\BsModalLaravel\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Regnilk\\BsModalLaravel\\BsModalServiceProvider"
+            ]
+        }
+    }
+}
