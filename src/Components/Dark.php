@@ -54,9 +54,9 @@
     
         public function token()
         {
-            $token = is_null($this->csrfToken) ? $this->session->token() : $this->csrfToken;
-        
-            return $this->hidden('_token', $token);
+            $token = is_null($this->csrfToken) ? session()->token() : $this->csrfToken;
+    
+            return "<input type='hidden' name='_token' value='$token' />";
         }
     
         /**
