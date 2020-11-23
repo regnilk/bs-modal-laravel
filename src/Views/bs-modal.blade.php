@@ -33,7 +33,7 @@
             <div class='modal-footer'>
                 <form id="modal-{{$name}}-form-{{$id}}" class="form" role="form" method="POST" action="{{$url}}">
                     @method("$method")
-                    {!! $token !!}
+                    @csrf
                     <button type='submit' class='btn btn-{{$outline}}{{$colorClass}}' id='confirm-{{$name}}-btn-{{$id}}'>
                         <x-fa icon="{{$icon}}" class="mr-1"/>{{$modalBtnText}}
                     </button>
