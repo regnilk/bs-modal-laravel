@@ -18,7 +18,9 @@ Laravel components for Bootstrap modals
 
 [![License](https://badgen.net/packagist/license/regnilk/bs-modal-laravel)]()
 
-> **Note** : This package is to be used with Laravel v8 and Bootstrap v4 
+> **Note** : This package is to be used with Laravel v8 and Bootstrap v4.
+>
+> It also requires [LaravelCollective/HTML](https://laravelcollective.com/docs/6.x/html) v6
 
 * [Installation](#installation)
 * [Configuration](#configuration)
@@ -59,7 +61,7 @@ You can customize this component like any other :
 
 ## Theming
 
-You can use different bootstrap themes for your modals and your modals trigger buttons : Danger, Dark, Info, Light, Primary, Secondary, Success and Warning
+You can use different bootstrap themes for your modals and modals trigger buttons : Danger, Dark, Info, Light, Primary, Secondary, Success and Warning
 
 ```html
     <x-modal-danger />
