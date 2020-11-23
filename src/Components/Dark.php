@@ -17,6 +17,7 @@
         public $name = 'dark';
         public $comment;
         public $method;
+        public $csrfToken;
     
         /**
          * Create a new component instance.
@@ -38,6 +39,7 @@
             $this->comment = $comment;
             $this->outline = $outline ? 'outline-' : '';
             $this->method = mb_strtoupper($method);
+            $this->csrfToken = null;
         }
         
         /**
@@ -49,7 +51,14 @@
         {
             return view('bs-modal-laravel::bs-modal');
         }
+    
+        public function token()
+        {
+            $token = is_null($this->csrfToken) ? $this->session->token() : $this->csrfToken;
         
+            return $this->hidden('_token', $token);
+        }
+    
         /**
          * @return string : the header background color
          */
