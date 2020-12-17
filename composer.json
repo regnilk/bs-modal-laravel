@@ -2,7 +2,7 @@
     "name": "regnilk/bs-modal-laravel",
     "description": "Laravel components for Bootstrap modals",
     "type": "library",
-    "keywords": ["laravel", "bootstrap", "modal"],
+    "keywords": ["laravel", "bootstrap", "modal", "component"],
     "license": "MIT",
     "homepage": "https://github.com/regnilk/bs-modal-laravel",
     "authors": [
