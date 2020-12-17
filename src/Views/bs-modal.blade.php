@@ -24,7 +24,7 @@
                 </button>
             </div>
             <div class='modal-body' id='modal-{{$name}}-body'>
-                {{$message}}
+                {!! $message !!}
                 @if(isset($comment) and $comment)
                     <p class="text-muted mt-3 small">You can leave a comment : </p>
                     <textarea name="comment" cols="60" rows="5"></textarea>
