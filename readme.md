@@ -75,6 +75,8 @@ You can use different bootstrap themes for your modals and modals trigger button
 <x-modal-secondary/>
 <x-modal-success/>
 <x-modal-warning/>
+<x-modal-success-danger/>
+<x-modal-danger-success/>
 ```
 
 ## Parameters
@@ -140,6 +142,10 @@ And a full example for a link trigger :
 ```html
 <x-modal-warning title="Delete" url="{{url('/delete'}}" message="Do you want to delete ?" icon="delete" btnText="Delete" modalBtnText="Remove" comment="true" outline="true" method="delete" mode="link" />
 ```
+
+> The success-danger theme provides a success trigger and a danger modal
+> The danger-success theme provides a danger trigger and a success modal
+> This can be useful if you want to show the state of an element and link an action in the modal to change this state.
 
 ## Contact
 

@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.3.0 - 18/12/2020
+
+- adding the success-danger modal
+- adding the danger-success modal
+
 ## 1.2.1 - 18/12/2020
 
 - debug link trigger color

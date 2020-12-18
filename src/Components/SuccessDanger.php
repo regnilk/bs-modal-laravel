@@ -1,0 +1,103 @@
+<?php
+    
+    namespace Regnilk\BsModalLaravel\Components;
+    
+    use Illuminate\View\Component;
+    
+    class SuccessDanger extends Component
+    {
+        public $id;
+        public $title;
+        public $url;
+        public $message;
+        public $icon;
+        public $btnText;
+        public $modalBtnText;
+        public $outline;
+        public $colorClassTrigger = 'success';
+        public $colorClassModal = 'danger';
+        public $name = 'success-danger';
+        public $comment;
+        public $method;
+        public $csrfToken;
+        public $mode;
+    
+        /**
+         * Create a new component instance.
+         *
+         * @param        $type
+         * @param        $title
+         * @param        $url
+         * @param        $message
+         * @param string $btnText
+         */
+        public function __construct($title, $url, $message, $icon = NULL, $btnText = '', $modalBtnText='', $comment = FALSE, $outline = FALSE, $method='PATCH', $mode='button')
+        {
+            $this->id = str_random();
+            $this->title = $title;
+            $this->url = $url;
+            $this->message = $message;
+            $this->icon = $icon ?? 'ok';
+            $this->btnText = $btnText;
+            $this->comment = $comment;
+            $this->outline = $outline ? 'outline-' : '';
+            $this->method = mb_strtoupper($method);
+            $this->csrfToken = null;
+            $this->mode = $mode;
+            $this->modalBtnText = $modalBtnText;
+        }
+        
+        /**
+         * Get the view / contents that represent the component.
+         *
+         * @return \Illuminate\Contracts\View\View|string
+         */
+        public function render()
+        {
+            return view('bs-modal-laravel::bs-modal-double');
+        }
+    
+        public function token()
+        {
+            $token = is_null($this->csrfToken) ? session()->token() : $this->csrfToken;
+    
+            return "<input type='hidden' name='_token' value='$token' />";
+        }
+        
+        /**
+         * @return string : the header background color
+         */
+        public function headerBgColor()
+        {
+            return ($this->outline) ? '' : "bg-{$this->colorClassModal}";
+        }
+        
+        /**
+         * @return string : the header text color
+         */
+        public function headerColor()
+        {
+            return ($this->outline) ? "text-{$this->colorClass}" : 'text-light';
+        }
+        
+        /**
+         * @return string : the color of the closing icon
+         */
+        public function closeColor()
+        {
+            return ($this->outline) ? "text-dark" : 'text-light';
+        }
+        
+        /**
+         * @return string : used to display a default text in the submit button
+         */
+        public function modalBtnText()
+        {
+            if(strlen($this->modalBtnText) > 0):
+                return $this->modalBtnText;
+            elseif(strlen($this->btnText) > 0):
+                return $this->btnText;
+            else:
+                return 'OK';
+            endif;        }
+    }

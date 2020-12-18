@@ -4,16 +4,7 @@
     
     use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
     use Illuminate\Support\Facades\Blade;
-    use Regnilk\BsModalLaravel\Components\{
-        Danger,
-        Dark,
-        Info,
-        Light,
-        Primary,
-        Secondary,
-        Success,
-        Warning
-    };
+    use Regnilk\BsModalLaravel\Components\{Danger, DangerSuccess, Dark, Info, Light, Primary, Secondary, Success, SuccessDanger, Warning};
     
     class BsModalServiceProvider extends LaravelServiceProvider
     {
@@ -39,7 +30,9 @@
                 Primary::class,
                 Secondary::class,
                 Success::class,
-                Warning::class
+                Warning::class,
+                SuccessDanger::class,
+                DangerSuccess::class,
             ]);
             
             $this->loadViewsFrom(__DIR__ . '/Views', 'bs-modal-laravel');
@@ -52,6 +45,8 @@
             Blade::component('modal-secondary', Secondary::class);
             Blade::component('modal-success', Success::class);
             Blade::component('modal-warning', Warning::class);
+            Blade::component('modal-success-danger', SuccessDanger::class);
+            Blade::component('modal-danger-success', DangerSuccess::class);
             
             /*$this->publishes([
                 __DIR__ . '/Views' => resource_path('views/vendor/components'),
