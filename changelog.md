@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.3.4 - 18/12/2020
+
+- debug modal cancel button style
+
 ## 1.3.3 - 18/12/2020
 
 - debug trigger button style

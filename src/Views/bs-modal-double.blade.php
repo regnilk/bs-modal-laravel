@@ -42,8 +42,7 @@
             <div class='modal-body' id='modal-{{$name}}-body'>
                 {!! $message !!}
                 @if(isset($comment) and $comment)
-                    <p class="text-muted mt-3 small">
-                        @if(config('app.locale') == 'fr')
+                    <p class="text-muted mt-3 small">@if(config('app.locale') == 'fr')
                             Vous pouvez laisser un commentaire :
                         @else
                             You can leave a comment :
@@ -59,8 +58,7 @@
                         <x-fa icon="{{$iconModal}}" class="mr-1"/>{{$modalBtnText}}
                     </button>
                     <button type='button' class='btn btn-{{$outline}}secondary' data-dismiss='modal'>
-                        <x-fa icon="cancel" class="mr-1"/>
-                        @if(config('app.locale') == 'fr')
+                        <x-fa icon="cancel" class="mr-1"/>@if(config('app.locale') == 'fr')
                             Annuler
                         @else
                             Cancel
