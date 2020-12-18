@@ -14,7 +14,7 @@
         {{$btnText}}
     </button>
         @else
-        <span {{ $attributes->merge(['class' => "$colorClass"])}}
+        <span {{ $attributes->merge(['class' => "text-$colorClass"])}}
                 data-target="#confirm-{{$name}}-{{$id}}"
                 data-toggle="modal"
                 data-title="{{$title}}"
