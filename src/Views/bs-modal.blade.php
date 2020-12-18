@@ -1,7 +1,7 @@
 {{--TRIGGER BUTTON--}}
 <span title="{{$title}}">
     @if($mode=='button')
-        <button {{ $attributes->merge(['class' => "text-$colorClass"])}}
+        <button {{ $attributes->merge(['class' => "btn btn-$outline$colorClass"])}}
                 style="cursor: pointer;"
                 data-target="#confirm-{{$name}}-{{$id}}"
                 data-toggle="modal"
