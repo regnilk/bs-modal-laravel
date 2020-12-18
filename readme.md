@@ -38,7 +38,7 @@ Install the package via Composer:
 ```sh
     $ composer require regnilk/bs-modal-laravel
 ```
-    
+
 The package service provider will be registered automatically.
 
 ## Configuration
@@ -47,16 +47,18 @@ There is no need for configuration
 
 ## Usage
 
-To display a modal, just call it this way : 
+To display a modal, just call it this way :
 
 ```html
-    <x-modal-success title="Confirm this ?" url="{{url('/confirm-this')}}" message="Do you confirm this ?" />
+
+<x-modal-success title="Confirm this ?" url="{{url('/confirm-this')}}" message="Do you confirm this ?"/>
 ```
 
-You can customize this component like any other : 
+You can customize this component like any other :
 
 ```html
-    <x-modal-danger title="myTitle" url="{{url('/'}}" message="myMessage" class="my-2" style="font-weight: bold;" />
+
+<x-modal-danger title="myTitle" url="{{url('/'}}" message="myMessage" class="my-2" style="font-weight: bold;"/>
 ```
 
 ## Theming
@@ -64,14 +66,15 @@ You can customize this component like any other :
 You can use different bootstrap themes for your modals and modals trigger buttons : Danger, Dark, Info, Light, Primary, Secondary, Success and Warning
 
 ```html
-    <x-modal-danger />
-    <x-modal-dark />
-    <x-modal-info />
-    <x-modal-light />
-    <x-modal-primary />
-    <x-modal-secondary />
-    <x-modal-success />
-    <x-modal-warning />
+
+<x-modal-danger/>
+<x-modal-dark/>
+<x-modal-info/>
+<x-modal-light/>
+<x-modal-primary/>
+<x-modal-secondary/>
+<x-modal-success/>
+<x-modal-warning/>
 ```
 
 ## Parameters
@@ -85,39 +88,57 @@ For each of these modules, you can use different parameters. Only three of them 
 - **message** : the text of the modal's body.
 
 - **icon** : the icon displayed in the trigger button, in the modal header and in the form submit button (uses [fa-laravel](https://github.com/regnilk/fa-laravel))
-  
+
   If no icon parameter is set, a default icon will be displayed.
-  
+
   If you don't want to display any icon, pass an empty icon parameter.
-  
+
   ```html
     <x-modal-info title="title" url="{{url('/'}}" message="myMessage" icon="" /> 
   ```
-  
-- **btnText** : the text in the trigger and submit buttons.
- 
-  If no parameter is set, 'OK' will be shown by default. 
+
+- **btnText** : the text in the trigger.
+
+  If no parameter is set, 'OK' will be shown by default.
 
   If you want no btnText, you have to pass the parameter with an empty value.
 
   ```html
-      <x-modal-info title="title" url="{{url('/'}}" message="myMessage" btnText="" /> 
+      <x-modal-info title="title" url="{{url('/'}}" message="myMessage" btnText="ok" /> 
     ```
-  
+- **modalBtnText** : the text in the submit button.
+
+  If no parameter is set, the btnText value will be used. If the btnText is not set 'OK' will be shown by default.
+
+  ```html
+      <x-modal-info title="title" url="{{url('/'}}" message="myMessage" modalBtnText="ok" /> 
+    ```
+
 - **comment** : If set to true, you will have à textarea in the modal to leave a comment.
 
 The dafault value is set to false.
 
 - **outline** : If set to true, all the buttons will be displayed in outline mode. The header colors will also be inverted.
 
-- **method** : You can indicate the method used in the modal's form. 
+- **method** : You can indicate the method used in the modal's form.
 
-    Possible values are : GET, POST, DELETE, PUT and PATCH (default) 
+  Possible values are : GET, POST, DELETE, PUT and PATCH (default)
 
-Here is a full example :
+- **mode** : You can choose the display mode of the trigger.
+
+  - button : the trigger will be a button (default value)
+  - link : the trigger will be a link
+
+Here is a full example for a button trigger :
 
 ```html
-    <x-modal-warning title="Delete" url="{{url('/delete'}}" message="Do you want to delete ?" icon="delete" btnText="Delete" comment="true" outline="true" method="delete" />
+<x-modal-warning title="Delete" url="{{url('/delete'}}" message="Do you want to delete ?" icon="delete" btnText="Delete" modalBtnText="Remove" comment="true" outline="true" method="delete" mode="button" />
+```
+
+And a full example for a link trigger :
+
+```html
+<x-modal-warning title="Delete" url="{{url('/delete'}}" message="Do you want to delete ?" icon="delete" btnText="Delete" modalBtnText="Remove" comment="true" outline="true" method="delete" mode="link" />
 ```
 
 ## Contact

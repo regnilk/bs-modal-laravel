@@ -12,12 +12,14 @@
         public $message;
         public $icon;
         public $btnText;
+        public $modalBtnText;
         public $outline;
         public $colorClass = 'primary';
         public $name = 'primary';
         public $comment;
         public $method;
         public $csrfToken;
+        public $mode;
     
         /**
          * Create a new component instance.
@@ -28,7 +30,7 @@
          * @param        $message
          * @param string $btnText
          */
-        public function __construct($title, $url, $message, $icon = NULL, $btnText = '', $comment = FALSE, $outline = FALSE, $method='PATCH')
+        public function __construct($title, $url, $message, $icon = NULL, $btnText = '', $modalBtnText='', $comment = FALSE, $outline = FALSE, $method='PATCH', $mode='button')
         {
             $this->id = str_random();
             $this->title = $title;
@@ -40,6 +42,8 @@
             $this->outline = $outline ? 'outline-' : '';
             $this->method = mb_strtoupper($method);
             $this->csrfToken = null;
+            $this->mode = $mode;
+            $this->modalBtnText = $modalBtnText;
         }
         
         /**
@@ -88,6 +92,11 @@
          */
         public function modalBtnText()
         {
-            return (strlen($this->btnText) > 0) ? $this->btnText : 'OK';
-        }
+            if(strlen($this->modalBtnText) > 0):
+                return $this->modalBtnText;
+            elseif(strlen($this->btnText) > 0):
+                return $this->btnText;
+            else:
+                return 'OK';
+            endif;        }
     }

@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.2.0 - 18/12/2020
+
+- Trigger can also be a link (icon and/or text)
+- Modal can have its own text in the submit button
+
 ## 1.1.3 - 17/12/2020
 
 - update modal message rendering
