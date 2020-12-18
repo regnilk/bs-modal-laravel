@@ -15,6 +15,7 @@
     </button>
         @else
         <span {{ $attributes->merge(['class' => "text-$colorClass"])}}
+                style="cursor: pointer;"
                 data-target="#confirm-{{$name}}-{{$id}}"
                 data-toggle="modal"
                 data-title="{{$title}}"
