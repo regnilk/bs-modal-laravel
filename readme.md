@@ -89,7 +89,7 @@ For each of these modules, you can use different parameters. Only three of them 
 
 - **message** : the text of the modal's body.
 
-- **icon** : the icon displayed in the trigger button, in the modal header and in the form submit button (uses [fa-laravel](https://github.com/regnilk/fa-laravel))
+- **icon** : the icon displayed in the trigger button (uses [fa-laravel](https://github.com/regnilk/fa-laravel))
 
   If no icon parameter is set, a default icon will be displayed.
 
@@ -97,6 +97,16 @@ For each of these modules, you can use different parameters. Only three of them 
 
   ```html
     <x-modal-info title="title" url="{{url('/'}}" message="myMessage" icon="" /> 
+  ```
+
+- **iconModal** : the icon displayed in the modal header and submit button,  (uses [fa-laravel](https://github.com/regnilk/fa-laravel))
+
+  If no iconModal parameter is set, the icon value will be used.
+
+  If no icon value is set then no icon will be displayed
+
+  ```html
+    <x-modal-info title="title" url="{{url('/'}}" message="myMessage" iconModal="" /> 
   ```
 
 - **btnText** : the text in the trigger.

@@ -52,7 +52,7 @@
                     @method("$method")
                     @csrf
                     <button type='submit' class='btn btn-{{$outline}}{{$colorClass}}' id='confirm-{{$name}}-btn-{{$id}}'>
-                        <x-fa icon="{{$icon}}" class="mr-1"/>{{$modalBtnText}}
+                        <x-fa icon="{{$iconModal}}" class="mr-1"/>{{$modalBtnText}}
                     </button>
                     <button type='button' class='btn btn-{{$outline}}secondary' data-dismiss='modal'>
                         <x-fa icon="cancel" class="mr-1"/>Cancel

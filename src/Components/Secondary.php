@@ -11,6 +11,7 @@
         public $url;
         public $message;
         public $icon;
+        public $iconModal;
         public $btnText;
         public $modalBtnText;
         public $outline;
@@ -30,13 +31,14 @@
          * @param        $message
          * @param string $btnText
          */
-        public function __construct($title, $url, $message, $icon = NULL, $btnText = '', $modalBtnText='', $comment = FALSE, $outline = FALSE, $method='PATCH', $mode='button')
+        public function __construct($title, $url, $message, $icon = NULL, $iconModal = NULL, $btnText = '', $modalBtnText='', $comment = FALSE, $outline = FALSE, $method='PATCH', $mode='button')
         {
             $this->id = str_random();
             $this->title = $title;
             $this->url = $url;
             $this->message = $message;
             $this->icon = $icon ?? 'ok';
+            $this->iconModal = $iconModal;
             $this->btnText = $btnText;
             $this->comment = $comment;
             $this->outline = $outline ? 'outline-' : '';
@@ -98,5 +100,17 @@
                 return $this->btnText;
             else:
                 return 'OK';
-            endif;        }
+            endif;
+        }
+    
+        public function iconModal()
+        {
+            if (!is_null($this->iconModal) and strlen(trim($this->iconModal)) > 0):
+                return $this->iconModal;
+            elseif (!is_null($this->icon) and strlen(trim($this->icon)) > 0):
+                return $this->icon;
+            else:
+                return '';
+            endif;
+        }
     }

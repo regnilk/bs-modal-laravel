@@ -11,6 +11,7 @@
         public $url;
         public $message;
         public $icon;
+        public $iconModal;
         public $btnText;
         public $modalBtnText;
         public $outline;
@@ -20,28 +21,35 @@
         public $method;
         public $csrfToken;
         public $mode;
-        
+    
         /**
          * Create a new component instance.
          *
-         * @param        $type
          * @param        $title
          * @param        $url
          * @param        $message
+         * @param null   $icon
+         * @param null   $iconModal
          * @param string $btnText
+         * @param string $modalBtnText
+         * @param bool   $comment
+         * @param bool   $outline
+         * @param string $method
+         * @param string $mode
          */
-        public function __construct($title, $url, $message, $icon = NULL, $btnText = '', $modalBtnText='', $comment = FALSE, $outline = FALSE, $method='PATCH', $mode='button')
+        public function __construct($title, $url, $message, $icon = NULL, $iconModal = NULL, $btnText = '', $modalBtnText = '', $comment = FALSE, $outline = FALSE, $method = 'PATCH', $mode = 'button')
         {
             $this->id = str_random();
             $this->title = $title;
             $this->url = $url;
             $this->message = $message;
             $this->icon = $icon ?? 'ok';
+            $this->iconModal = $iconModal;
             $this->btnText = $btnText;
             $this->comment = $comment;
             $this->outline = $outline ? 'outline-' : '';
             $this->method = mb_strtoupper($method);
-            $this->csrfToken = null;
+            $this->csrfToken = NULL;
             $this->mode = $mode;
             $this->modalBtnText = $modalBtnText;
         }
@@ -59,7 +67,7 @@
         public function token()
         {
             $token = is_null($this->csrfToken) ? session()->token() : $this->csrfToken;
-    
+            
             return "<input type='hidden' name='_token' value='$token' />";
         }
         
@@ -92,12 +100,23 @@
          */
         public function modalBtnText()
         {
-            if(strlen($this->modalBtnText) > 0):
+            if (strlen($this->modalBtnText) > 0):
                 return $this->modalBtnText;
-            elseif(strlen($this->btnText) > 0):
+            elseif (strlen($this->btnText) > 0):
                 return $this->btnText;
             else:
                 return 'OK';
+            endif;
+        }
+        
+        public function iconModal()
+        {
+            if (!is_null($this->iconModal) and strlen(trim($this->iconModal)) > 0):
+                return $this->iconModal;
+            elseif (!is_null($this->icon) and strlen(trim($this->icon)) > 0):
+                return $this->icon;
+            else:
+                return '';
             endif;
         }
     }

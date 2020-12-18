@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.3.1 - 18/12/2020
+
+- adding the iconModal
+
 ## 1.3.0 - 18/12/2020
 
 - adding the success-danger modal
