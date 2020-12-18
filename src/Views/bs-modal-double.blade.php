@@ -1,26 +1,26 @@
 {{--TRIGGER BUTTON--}}
 <span title="{{$title}}">
     @if($mode=='button')
-    <button {{ $attributes->merge(['class' => "text-$colorClassTrigger"])}}
-            style="cursor: pointer;"
-            data-target="#confirm-{{$name}}-{{$id}}"
-            data-toggle="modal"
-            data-title="{{$title}}"
-            data-url="{{$url}}"
-            data-message="{{$message}}">
-        @if(strlen(trim($icon)) > 0)
-            <x-fa icon="{{$icon}}" class="mr-1"/>
-        @endif
-        {{$btnText}}
-    </button>
-        @else
-        <span {{ $attributes->merge(['class' => "text-$colorClassTrigger"])}}
+        <button {{ $attributes->merge(['class' => "text-$colorClassTrigger"])}}
                 style="cursor: pointer;"
                 data-target="#confirm-{{$name}}-{{$id}}"
                 data-toggle="modal"
                 data-title="{{$title}}"
                 data-url="{{$url}}"
                 data-message="{{$message}}">
+        @if(strlen(trim($icon)) > 0)
+                <x-fa icon="{{$icon}}" class="mr-1"/>
+            @endif
+            {{$btnText}}
+    </button>
+    @else
+        <span {{ $attributes->merge(['class' => "text-$colorClassTrigger"])}}
+              style="cursor: pointer;"
+              data-target="#confirm-{{$name}}-{{$id}}"
+              data-toggle="modal"
+              data-title="{{$title}}"
+              data-url="{{$url}}"
+              data-message="{{$message}}">
         @if(strlen(trim($icon)) > 0)
                 <x-fa icon="{{$icon}}" class="mr-1"/>
             @endif
@@ -43,7 +43,11 @@
                 {!! $message !!}
                 @if(isset($comment) and $comment)
                     <p class="text-muted mt-3 small">
-                         You can leave a comment : </p>
+                        @if(config('app.locale') == 'fr')
+                            Vous pouvez laisser un commentaire :
+                        @else
+                            You can leave a comment :
+                        @endif</p>
                     <textarea name="comment" cols="60" rows="5"></textarea>
                 @endif
             </div>
@@ -55,7 +59,12 @@
                         <x-fa icon="{{$iconModal}}" class="mr-1"/>{{$modalBtnText}}
                     </button>
                     <button type='button' class='btn btn-{{$outline}}secondary' data-dismiss='modal'>
-                        <x-fa icon="cancel" class="mr-1"/>Cancel
+                        <x-fa icon="cancel" class="mr-1"/>
+                        @if(config('app.locale') == 'fr')
+                            Annuler
+                        @else
+                            Cancel
+                        @endif
                     </button>
                 </form>
             </div>
