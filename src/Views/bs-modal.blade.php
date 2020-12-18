@@ -62,7 +62,7 @@
                             Annuler
                         @else
                             Cancel
-                        @endif</p>
+                        @endif
                     </button>
                 </form>
             </div>

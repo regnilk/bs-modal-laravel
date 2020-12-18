@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.3.5 - 19/12/2020
+
+- update modal view
+
 ## 1.3.4 - 18/12/2020
 
 - debug modal cancel button style
