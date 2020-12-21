@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.3.5 - 21/12/2020
+
+- trigger can now be a badge
+
 ## 1.3.5 - 19/12/2020
 
 - update modal view

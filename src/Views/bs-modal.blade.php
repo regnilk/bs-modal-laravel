@@ -2,30 +2,43 @@
 <span title="{{$title}}">
     @if($mode=='button')
         <button {{ $attributes->merge(['class' => "btn btn-$outline$colorClass"])}}
-                style="cursor: pointer;"
-                data-target="#confirm-{{$name}}-{{$id}}"
-                data-toggle="modal"
-                data-title="{{$title}}"
-                data-url="{{$url}}"
-                data-message="{{$message}}">
-        @if(strlen(trim($icon)) > 0)
+            style="cursor: pointer;"
+            data-target="#confirm-{{$name}}-{{$id}}"
+            data-toggle="modal"
+            data-title="{{$title}}"
+            data-url="{{$url}}"
+            data-message="{{$message}}">
+            @if(strlen(trim($icon)) > 0)
                 <x-fa icon="{{$icon}}" class="mr-1"/>
             @endif
             {{$btnText}}
-    </button>
+        </button>
+    @elseif($mode=='badge')
+        <span {{ $attributes->merge(['class' => "badge badge-$colorClass"])}}
+            style="cursor: pointer;"
+            data-target="#confirm-{{$name}}-{{$id}}"
+            data-toggle="modal"
+            data-title="{{$title}}"
+            data-url="{{$url}}"
+            data-message="{{$message}}">
+            @if(strlen(trim($icon)) > 0)
+                <x-fa icon="{{$icon}}" class="mr-1"/>
+            @endif
+            {{$btnText}}
+        </span>
     @else
         <span {{ $attributes->merge(['class' => "text-$colorClass"])}}
-              style="cursor: pointer;"
-              data-target="#confirm-{{$name}}-{{$id}}"
-              data-toggle="modal"
-              data-title="{{$title}}"
-              data-url="{{$url}}"
-              data-message="{{$message}}">
-        @if(strlen(trim($icon)) > 0)
+            style="cursor: pointer;"
+            data-target="#confirm-{{$name}}-{{$id}}"
+            data-toggle="modal"
+            data-title="{{$title}}"
+            data-url="{{$url}}"
+            data-message="{{$message}}">
+            @if(strlen(trim($icon)) > 0)
                 <x-fa icon="{{$icon}}" class="mr-1"/>
             @endif
             {{$btnText}}
-    </span>
+        </span>
     @endif
 </span>
 

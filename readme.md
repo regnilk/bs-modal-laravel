@@ -139,12 +139,19 @@ The dafault value is set to false.
 - **mode** : You can choose the display mode of the trigger.
 
   - button : the trigger will be a button (default value)
+  - badge  : the trigger will be a badge 
   - link : the trigger will be a link
 
 Here is a full example for a button trigger :
 
 ```html
 <x-modal-warning title="Delete" url="{{url('/delete'}}" message="Do you want to delete ?" icon="delete" btnText="Delete" modalBtnText="Remove" comment="true" outline="true" method="delete" mode="button" />
+```
+
+For a badge trigger :
+
+```html
+<x-modal-warning title="Delete" url="{{url('/delete'}}" message="Do you want to delete ?" icon="delete" btnText="Delete" modalBtnText="Remove" comment="true" outline="true" method="delete" mode="badge" />
 ```
 
 And a full example for a link trigger :

@@ -8,29 +8,42 @@
                 data-title="{{$title}}"
                 data-url="{{$url}}"
                 data-message="{{$message}}">
-        @if(strlen(trim($icon)) > 0)
+            @if(strlen(trim($icon)) > 0)
                 <x-fa icon="{{$icon}}" class="mr-1"/>
             @endif
             {{$btnText}}
-    </button>
-    @else
-        <span {{ $attributes->merge(['class' => "text-$colorClassTrigger"])}}
+        </button>
+    @elseif($mode=='badge')
+        <span {{ $attributes->merge(['class' => "badge badge-$colorClassTrigger"])}}
               style="cursor: pointer;"
               data-target="#confirm-{{$name}}-{{$id}}"
               data-toggle="modal"
               data-title="{{$title}}"
               data-url="{{$url}}"
               data-message="{{$message}}">
-        @if(strlen(trim($icon)) > 0)
+            @if(strlen(trim($icon)) > 0)
                 <x-fa icon="{{$icon}}" class="mr-1"/>
             @endif
             {{$btnText}}
-    </span>
+        </span>
+    @else
+        <span {{ $attributes->merge(['class' => "text-$colorClassTrigger"])}}
+            style="cursor: pointer;"
+            data-target="#confirm-{{$name}}-{{$id}}"
+            data-toggle="modal"
+            data-title="{{$title}}"
+            data-url="{{$url}}"
+            data-message="{{$message}}">
+            @if(strlen(trim($icon)) > 0)
+                <x-fa icon="{{$icon}}" class="mr-1"/>
+            @endif
+            {{$btnText}}
+        </span>
     @endif
 </span>
-
-{{--MODAL--}}
-<div class='modal fade' tabindex='-1' role='dialog' id='confirm-{{$name}}-{{$id}}'>
+        
+        {{--MODAL--}}
+        <div class='modal fade' tabindex='-1' role='dialog' id='confirm-{{$name}}-{{$id}}'>
     <div class='modal-dialog' role='document'>
         <div class='modal-content'>
             <div class="modal-header {{$headerBgColor}}">
