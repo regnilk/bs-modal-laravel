@@ -66,7 +66,6 @@ You can customize this component like any other :
 You can use different bootstrap themes for your modals and modals trigger buttons : Danger, Dark, Info, Light, Primary, Secondary, Success and Warning
 
 ```html
-
 <x-modal-danger/>
 <x-modal-dark/>
 <x-modal-info/>
@@ -77,6 +76,11 @@ You can use different bootstrap themes for your modals and modals trigger button
 <x-modal-warning/>
 <x-modal-success-danger/>
 <x-modal-danger-success/>
+```
+
+If you want to use a custom color class, you can call the modal without any standard theme. In that case, you will have to indicate what color class is to be used :
+```html
+<x-modal color-class="my-custom-theme" />
 ```
 
 ## Parameters

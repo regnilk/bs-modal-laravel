@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.4.0 - 11/01/2021
+
+- adding no-theme modal
+
 ## 1.3.5 - 21/12/2020
 
 - trigger can now be a badge
@@ -42,7 +46,7 @@
 
 - update modal message rendering
 
-## 1.1.2 - 17/12/2020
+##1.1.2 - 17/12/2020
 
 - debug Laravel 7 support
 
