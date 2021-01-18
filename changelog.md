@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.4.1 - 18/01/2021
+
+- debug comments
+
 ## 1.4.0 - 11/01/2021
 
 - adding no-theme modal

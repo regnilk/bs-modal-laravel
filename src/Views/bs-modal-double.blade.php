@@ -28,12 +28,12 @@
         </span>
     @else
         <span {{ $attributes->merge(['class' => "text-$colorClassTrigger"])}}
-            style="cursor: pointer;"
-            data-target="#confirm-{{$name}}-{{$id}}"
-            data-toggle="modal"
-            data-title="{{$title}}"
-            data-url="{{$url}}"
-            data-message="{{$message}}">
+              style="cursor: pointer;"
+              data-target="#confirm-{{$name}}-{{$id}}"
+              data-toggle="modal"
+              data-title="{{$title}}"
+              data-url="{{$url}}"
+              data-message="{{$message}}">
             @if(strlen(trim($icon)) > 0)
                 <x-fa icon="{{$icon}}" class="mr-1"/>
             @endif
@@ -41,9 +41,9 @@
         </span>
     @endif
 </span>
-        
-        {{--MODAL--}}
-        <div class='modal fade' tabindex='-1' role='dialog' id='confirm-{{$name}}-{{$id}}'>
+
+{{--MODAL--}}
+<div class='modal fade' tabindex='-1' role='dialog' id='confirm-{{$name}}-{{$id}}'>
     <div class='modal-dialog' role='document'>
         <div class='modal-content'>
             <div class="modal-header {{$headerBgColor}}">
@@ -52,21 +52,22 @@
                     <span aria-hidden='true'><x-fa icon="close" class="{{$closeColor}}"/></span>
                 </button>
             </div>
-            <div class='modal-body' id='modal-{{$name}}-body'>
-                {!! $message !!}
-                @if(isset($comment) and $comment)
-                    <p class="text-muted mt-3 small">@if(config('app.locale') == 'fr')
-                            Vous pouvez laisser un commentaire :
-                        @else
-                            You can leave a comment :
-                        @endif</p>
-                    <textarea name="comment" cols="60" rows="5"></textarea>
-                @endif
-            </div>
-            <div class='modal-footer'>
-                <form id="modal-{{$name}}-form-{{$id}}" class="form" role="form" method="POST" action="{{$url}}">
-                    @method("$method")
-                    @csrf
+            <form id="modal-{{$name}}-form-{{$id}}" class="form" role="form" method="POST" action="{{$url}}">
+                @method("$method")
+                @csrf
+                <div class='modal-body' id='modal-{{$name}}-body'>
+                    {!! $message !!}
+                    @if(isset($comment) and $comment)
+                        <p class="text-muted mt-3 small">@if(config('app.locale') == 'fr')
+                                Vous pouvez laisser un commentaire :
+                            @else
+                                You can leave a comment :
+                            @endif</p>
+                        <textarea name="comment" cols="60" rows="5"></textarea>
+                    @endif
+                </div>
+                <div class='modal-footer'>
+                    
                     <button type='submit' class='btn btn-{{$outline}}{{$colorClassModal}}' id='confirm-{{$name}}-btn-{{$id}}'>
                         <x-fa icon="{{$iconModal}}" class="mr-1"/>{{$modalBtnText}}
                     </button>
@@ -77,8 +78,9 @@
                             Cancel
                         @endif
                     </button>
-                </form>
-            </div>
+                
+                </div>
+            </form>
         </div>
     </div>
 </div>
