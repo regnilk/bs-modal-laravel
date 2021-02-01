@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.4.2 - 01/02/2021
+
+- adding dark-success component
+
 ## 1.4.1 - 18/01/2021
 
 - debug comments

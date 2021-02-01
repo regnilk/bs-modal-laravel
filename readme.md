@@ -76,6 +76,7 @@ You can use different bootstrap themes for your modals and modals trigger button
 <x-modal-warning/>
 <x-modal-success-danger/>
 <x-modal-danger-success/>
+<x-modal-dark-success/>
 ```
 
 If you want to use a custom color class, you can call the modal without any standard theme. In that case, you will have to indicate what color class is to be used :

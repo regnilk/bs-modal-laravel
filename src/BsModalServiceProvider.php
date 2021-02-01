@@ -4,7 +4,7 @@
     
     use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
     use Illuminate\Support\Facades\Blade;
-    use Regnilk\BsModalLaravel\Components\{Danger, DangerSuccess, Dark, Info, Light, Primary, Secondary, Success, SuccessDanger, Warning, NoTheme};
+    use Regnilk\BsModalLaravel\Components\{Danger, DangerSuccess, Dark, DarkSuccess, Info, Light, Primary, Secondary, Success, SuccessDanger, Warning, NoTheme};
     
     class BsModalServiceProvider extends LaravelServiceProvider
     {
@@ -33,6 +33,7 @@
                 Warning::class,
                 SuccessDanger::class,
                 DangerSuccess::class,
+                DarkSuccess::class,
                 NoTheme::class,
             ]);
             
@@ -48,6 +49,7 @@
             Blade::component('modal-warning', Warning::class);
             Blade::component('modal-success-danger', SuccessDanger::class);
             Blade::component('modal-danger-success', DangerSuccess::class);
+            Blade::component('modal-dark-success', DarkSuccess::class);
             Blade::component('modal', NoTheme::class);
             
             /*$this->publishes([
