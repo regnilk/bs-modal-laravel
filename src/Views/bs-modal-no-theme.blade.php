@@ -57,23 +57,23 @@
                 @csrf
                 <div class='modal-body' id='modal-{{$name}}-body'>
                     {!! $message !!}
-                    @if(isset($comment) and $comment)
+                    @if(!is_null($comment))
                         <p class="text-muted mt-3 small">
                             @if(config('app.locale') == 'fr')
-                                @if(isset($commentRequired) and $commentRequired)
-                                    Vous devez laisser un commentaire :
-                                @else
+                                @if(is_null($commentRequired))
                                     Vous pouvez laisser un commentaire :
+                                @else
+                                    Vous devez laisser un commentaire :
                                 @endif
                             @else
-                                @if(isset($commentRequired) and $commentRequired)
-                                    You must leave a comment :
-                                @else
+                                @if(is_null($commentRequired))
                                     You can leave a comment :
+                                @else
+                                    You must leave a comment :
                                 @endif
                             @endif
                         </p>
-                        <textarea name="comment" cols="60" rows="5" @if(isset($commentRequired) and $commentRequired) required @endif></textarea>
+                        <textarea name="comment" cols="60" rows="5" @if(!is_null($commentRequired)) required @endif></textarea>
                     @endif
                 </div>
                 <div class='modal-footer'>

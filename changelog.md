@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.4.5 - 25/02/2021
+
+- simplifying comment and commentRequired attributes
+
 ## 1.4.4 - 25/02/2021
 
 - debug comment required attribute

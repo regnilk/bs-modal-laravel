@@ -26,13 +26,20 @@
         /**
          * Create a new component instance.
          *
-         * @param        $type
          * @param        $title
          * @param        $url
          * @param        $message
+         * @param null   $icon
+         * @param null   $iconModal
          * @param string $btnText
+         * @param string $modalBtnText
+         * @param null   $comment
+         * @param null   $commentRequired
+         * @param bool   $outline
+         * @param string $method
+         * @param string $mode
          */
-        public function __construct($title, $url, $message, $icon = NULL, $iconModal = NULL, $btnText = '', $modalBtnText='', $comment = FALSE, $commentRequired = false, $outline = FALSE, $method='PATCH', $mode='button')
+        public function __construct($title, $url, $message, $icon = NULL, $iconModal = NULL, $btnText = '', $modalBtnText='', $comment = NULL, $commentRequired = NULL, $outline = FALSE, $method='PATCH', $mode='button')
         {
             $this->id = str_random();
             $this->title = $title;

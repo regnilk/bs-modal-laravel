@@ -131,13 +131,9 @@ For each of these modules, you can use different parameters. Only three of them 
       <x-modal-info title="title" url="{{url('/'}}" message="myMessage" modalBtnText="ok" /> 
     ```
 
-- **comment** : If set to true, you will have à textarea in the modal to leave a comment.
+- **comment** : If present, you will have à textarea in the modal to leave a comment.
 
-The default value is set to false.
-
-- **commentRequired** : If set to true, indicates that the comment is required
-
-The default value is set to false.
+- **commentRequired** : If present, indicates that the comment is required
 
 - **outline** : If set to true, all the buttons will be displayed in outline mode. The header colors will also be inverted.
 
