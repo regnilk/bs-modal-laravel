@@ -58,12 +58,22 @@
                 <div class='modal-body' id='modal-{{$name}}-body'>
                     {!! $message !!}
                     @if(isset($comment) and $comment)
-                        <p class="text-muted mt-3 small">@if(config('app.locale') == 'fr')
-                                Vous pouvez laisser un commentaire :
+                        <p class="text-muted mt-3 small">
+                            @if(config('app.locale') == 'fr')
+                                @if(isset($commentRequired) and $commentRequired)
+                                    Vous devez laisser un commentaire :
+                                @else
+                                    Vous pouvez laisser un commentaire :
+                                @endif
                             @else
-                                You can leave a comment :
-                            @endif</p>
-                        <textarea name="comment" cols="60" rows="5"></textarea>
+                                @if(isset($commentRequired) and $commentRequired)
+                                    You must leave a comment :
+                                @else
+                                    You can leave a comment :
+                                @endif
+                            @endif
+                        </p>
+                        <textarea name="comment" cols="60" rows="5" @if(isset($commentRequired) and $commentRequired) required @endif></textarea>
                     @endif
                 </div>
                 <div class='modal-footer'>

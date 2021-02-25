@@ -19,6 +19,7 @@
         public $colorClassModal = 'success';
         public $name = 'danger-success';
         public $comment;
+        public $commentRequired;
         public $method;
         public $csrfToken;
         public $mode;
@@ -32,7 +33,7 @@
          * @param        $message
          * @param string $btnText
          */
-        public function __construct($title, $url, $message, $icon = NULL, $iconModal = NULL, $btnText = '', $modalBtnText='', $comment = FALSE, $outline = FALSE, $method='PATCH', $mode='button')
+        public function __construct($title, $url, $message, $icon = NULL, $iconModal = NULL, $btnText = '', $modalBtnText='', $comment = FALSE, $commentRequired = false, $outline = FALSE, $method='PATCH', $mode='button')
         {
             $this->id = str_random();
             $this->title = $title;
@@ -42,6 +43,7 @@
             $this->iconModal = $iconModal;
             $this->btnText = $btnText;
             $this->comment = $comment;
+            $this->commentRequired = $commentRequired;
             $this->outline = $outline ? 'outline-' : '';
             $this->method = mb_strtoupper($method);
             $this->csrfToken = null;
